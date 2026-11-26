@@ -20,7 +20,7 @@ public class Lithin {
     String education  = "B.Tech CSBS @ VIT-AP University (2028)";
     String focus      = "Java Backend Engineering & Distributed Systems";
     String[] building = { "Sentinel API Gateway", "Sova Job Scheduler" };
-    String[] learning = { "Distributed Systems", "Concurrency", "PostgreSQL Internals", "DSA" };
+    String[] learning = { "Distributed Systems", "Concurrency", "Microsoft Azure" };
     String openTo     = "Backend / SDE Internships";
 }
 ```
