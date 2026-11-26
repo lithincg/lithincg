@@ -68,9 +68,9 @@ public class Lithin {
 - Engineered distributed rate limiting with Redis Sorted Sets and atomic Lua scripts (`HTTP 429` + `Retry-After`) with local memory and DB fallback during Redis outages.
 - Verified with 15 JUnit 5 concurrency tests (`1,000` concurrent threads), Testcontainers PostgreSQL checks, and 4 k6 load scenarios.
 
-#### 2. [Sova — Distributed Job Scheduler](https://github.com/lithincg/sova)
+#### 2. [Sova (Distributed Job Scheduler)](https://github.com/lithincg/sova)
 `Java 21` `Spring Boot 3.4` `PostgreSQL 16` `Redis 7.2` `Flyway` `Docker Compose` `Testcontainers` `Prometheus` `GitHub Actions`
-- Built a race-free concurrent job claiming engine using PostgreSQL `FOR UPDATE SKIP LOCKED` and partial indexes, verified across 8 concurrent threads claiming 40 jobs with **0 duplicate claims and 0 lost jobs**.
+- Built a concurrent job claiming engine using PostgreSQL `FOR UPDATE SKIP LOCKED` and partial indexes, verified across 8 concurrent threads claiming 40 jobs with **0 duplicate claims and 0 lost jobs**.
 - Implemented automatic worker crash recovery via expiring 30s Redis heartbeats and a background reaper, paired with capped exponential backoff retries, dead letter queues, and manual replay APIs.
-- Added idempotent job submission (`Idempotency-Key` partial unique index), guarded state transitions, and per-attempt execution history endpoints.
+- Added idempotent job submission (`Idempotency-Key` partial unique index), guarded state transitions, and attempt execution history endpoints.
 - Instrumented Micrometer/Prometheus counters (`completed`, `retried`, `reclaimed`) with automated Testcontainers integration tests in GitHub Actions CI.
